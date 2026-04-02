@@ -29,8 +29,15 @@ int main (){
     resultadoA = estoqueA > estoqueminA;
     resultadoB = estoqueB > estoqueminB;
 
-    printf("O produto %s tem estoque acima do mínimo? %d\n", produtoA, resultadoA);
-    printf("O produto %s tem estoque acima do mínimo? %d\n", produtoB, resultadoB);
+    if (estoqueA > estoqueminA) {
+        printf("reserva de %s adequada\n", produtoA);
+    } else { printf ("reserva de %s está critíca!\n", produtoA);
+    }
+
+    if (estoqueB > estoqueminB) {
+        printf("reserva de %s adequada\n", produtoB);
+    } else { printf ("reserva de %s está critíca!\n", produtoB);
+    }
 
     printf("O valor total de %s (R$ %.2f) é maior que o valor total de %s (R$ %.2f)? %d\n", produtoA, (estoqueA * valorA), produtoB, (estoqueB * valorB), valorTotalA > valorTotalB);
     return 0;
